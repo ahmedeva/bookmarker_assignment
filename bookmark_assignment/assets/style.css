@@ -1,0 +1,122 @@
+:root {
+  --clr-white: var(--hue) var(--saturation) var(--lightness-high);
+  --clr-black: var(--hue) var(--saturation) var(--lightness);
+
+  --hue: 0;
+
+  --saturation: 0%;
+  --saturation-mid: 50%;
+  --saturation-high: 100%;
+
+  --lightness: 0%;
+  --lightness-mid: 50%;
+  --lightness-light: 90%;
+  --lightness-high: 100%;
+
+  --clr-bg-body: hsl(34, 61%, 92%);
+
+  --clr-bg-btn-primary: hsl(13, 65%, 50%);
+  --clr-bg-btn-primary-dark: hsl(13, 65%, 40%);
+
+  --clr-bg-btn-secondary: hsl(45, 100%, 59%);
+  --clr-bg-btn-secondary-dark: hsl(45, 73%, 59%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  position: relative;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.2rem;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  height: 35%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: hsla(39, 100%, 50%, 0.5);
+  transition: height 150ms ease-in;
+}
+
+h1:hover::before {
+  height: 65%;
+}
+
+h2 {
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    hsl(120, 83%, 41%),
+    hsl(66, 90%, 37%)
+  );
+  background-clip: text;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form,
+label,
+input {
+  font: inherit;
+}
+
+body {
+  background: var(--clr-bg-body);
+}
+
+.form-box {
+  padding: 2em 0;
+  border-top: 1px dashed hsl(var(--clr-black));
+  border-bottom: 1px dashed hsl(var(--clr-black));
+}
+
+.form__btn--submit,
+.form__btn--update {
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.6rem 3.6rem;
+  transition: background 150ms ease-in;
+  color: hsl(var(--clr-white));
+}
+.form__btn--submit {
+  background-color: var(--clr-bg-btn-primary);
+}
+.form__btn--update {
+  display: none;
+  background-color: var(--clr-bg-btn-secondary);
+}
+
+.form__btn--submit:hover {
+  background-color: var(--clr-bg-btn-primary-dark);
+}
+.form__btn--update:hover {
+  background-color: var(--clr-bg-btn-secondary-dark);
+}
+
+a i {
+  margin-right: 8px;
+}
